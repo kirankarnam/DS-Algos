@@ -91,8 +91,8 @@ public class MedianSortedArrays {
         return 0;
     }
 	public static void main(String[] args) {
-		int[] x = {1, 2};
-        int[] y = {3,4};
+		int[] x = {};
+        int[] y = {1};
         // 1,3,7,8,9,11,15,18,19,21,25
         MedianSortedArrays msa = new MedianSortedArrays();
         System.out.println(msa.findMedian(x, y));

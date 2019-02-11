@@ -7,7 +7,7 @@ public class PossibleCombinations {
 		
 		System.out.println(new PossibleCombinations().possibleDecodings(digits));
 		
-		System.out.println(new PossibleCombinations().possibleDecodings("1242".toCharArray()));
+		System.out.println(new PossibleCombinations().possibleDecodings("23".toCharArray()));
 		
 		System.out.println(new PossibleCombinations().possibleDecodings("12321".toCharArray()));
 

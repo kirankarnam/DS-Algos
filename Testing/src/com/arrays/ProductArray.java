@@ -7,39 +7,35 @@ public class ProductArray {
 	public static void main(String[] args) {
 		ProductArray pa = new ProductArray();
 		int[] n = {1,2,3,4};
-		pa.product(n);
-
+		int[] res = pa.product(n);
+		for(int i:res)
+			System.out.println(i);
 	}
 	
-	public void product(int[] n) {
-		if(n ==null) throw new IllegalArgumentException();
-		int length = n.length;
-		int [] prod = new int[length];
+	/**
+	 * 
+	 * @param nums
+	 * @return
+	 * 
+	 * for right res[i] = rightMul
+	 * for left res[i] = res[i]*leftMul;
+	 */
+	public int[] product(int[] nums) {
+		int length = nums.length;
 		
-		int temp=1;
+		int [] res = new int[length];
+		int leftMul=1,rightMul=1;
 		
-		Arrays.fill(prod, 1);
-		
-		for(int i=0;i<length;i++) {
-			prod[i] = temp;
-			temp = temp*n[i];
-		}
-		
-		for(int result:prod) {
-			System.out.print(result +"   ");
-		}
-		
-		temp=1;
 		for(int i=length-1;i>=0;i--) {
-			prod[i] = prod[i]*temp;
-			
-			temp = temp*n[i];
+			res[i]=rightMul;
+			rightMul = rightMul*nums[i];
 		}
 		
-		for(int result:prod) {
-			System.out.print(result +"   ");
+		for(int j=0;j<length;j++) {
+			res[j] = res[j]*leftMul;
+			leftMul = leftMul*nums[j];
 		}
-		
+		return res;
 	}
 
 }
