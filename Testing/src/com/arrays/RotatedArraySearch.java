@@ -13,7 +13,7 @@ public class RotatedArraySearch {
 		
 		int length = num.length;
 		
-		return search (num,0,length,target);
+		return search (num,0,length-1,target);
 	}
 
 	private int search(int[] num, int start, int end, int target) {
@@ -21,7 +21,7 @@ public class RotatedArraySearch {
 		if(end < start ) return -1;
 		
 		int mid = (start+end)/2;
-		
+		System.out.println(mid+"---"+start+"---"+end);
 		if(target == num[mid]) return mid;
 		
 		//check if the left side is sorted
